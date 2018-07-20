@@ -1,5 +1,5 @@
 .versionsBackup
-
+.idea
 /target
 
 /gitmaven-jar/.classpath
