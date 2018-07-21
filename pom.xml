@@ -12,10 +12,10 @@
     </modules>
 
     <scm>
-        <connection>scm:git:file://.</connection>
-        <developerConnection>scm:git:file://.</developerConnection>
-        <url>scm:git:file://.</url>
-      <tag>v1.1.0</tag>
+        <connection>https://github.com/mdshi/gitMavenNexus.git</connection>
+        <developerConnection>https://github.com/mdshi/gitMavenNexus.git</developerConnection>
+        <url>https://github.com/mdshi/gitMavenNexus.git</url>
+        <tag>HEAD</tag>
   </scm>
 
     <distributionManagement>
