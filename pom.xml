@@ -54,8 +54,8 @@
                            <phase>deploy</phase>
                            <goals>
                                <goal>deploy</goal>
-                               <goal>rlease:prepare</goal>
-                               <goal>release:perform</goal>
+                               <goal>prepare</goal>
+                               <goal>perform</goal>
                            </goals>
 
 
