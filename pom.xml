@@ -14,7 +14,7 @@
     <scm>
         <connection>https://github.com/mdshi/gitMavenNexus.git</connection>
         <developerConnection>https://github.com/mdshi/gitMavenNexus.git</developerConnection>
-        <url>https://github.com/mdshi/gitMavenNexus.git</url>
+        <url>https://github.com/mdshi/gitMavenNexus</url>
         <tag>1.1.0</tag>
   </scm>
 
@@ -38,6 +38,7 @@
                     <allowTimestampedSnapshots>true</allowTimestampedSnapshots>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <localCheckout>true</localCheckout>
+                    <releaseProfiles>releases</releaseProfiles>
                 </configuration>
             </plugin>
         </plugins>
@@ -53,35 +54,41 @@
                         <releaseProfiles>releases</releaseProfiles>
                     </configuration>
                 </plugin>
-                <plugin>
-                    <groupId>org.sonatype.plugins</groupId>
-                    <artifactId>nexus-staging-maven-plugin</artifactId>
-                    <version>1.6.8</version>
-                    <executions>
-                        <execution>
-                            <id>default-deploy</id>
-                            <phase>deploy</phase>
-                            <goals>
-                                <goal>deploy</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <configuration>
-                        <serverId>releases</serverId>
-                        <nexusUrl>http://localhost:8081/nexus/</nexusUrl>
-                        <skipStaging>true</skipStaging>
-                    </configuration>
-                </plugin>
             </plugins>
-
 
         </pluginManagement>
 
 
 
-
     </build>
-
+    <profiles>
+        <profile>
+            <id>releases</id>
+            <build>
+           <plugins>
+               <plugin>
+                   <groupId>org.sonatype.plugins</groupId>
+                   <artifactId>nexus-staging-maven-plugin</artifactId>
+                   <version>1.6.8</version>
+                   <executions>
+                       <execution>
+                           <id>default-deploy</id>
+                           <phase>deploy</phase>
+                           <goals>
+                               <goal>deploy</goal>
+                           </goals>
+                       </execution>
+                   </executions>
+                   <configuration>
+                       <serverId>releases</serverId>
+                       <nexusUrl>http://localhost:8081/nexus/</nexusUrl>
+                       <skipStaging>true</skipStaging>
+                   </configuration>
+               </plugin>
+           </plugins>
+            </build>
+        </profile>
+    </profiles>
     <dependencyManagement>
         <dependencies>
             <dependency>
