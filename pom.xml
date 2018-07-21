@@ -15,7 +15,7 @@
         <connection>https://github.com/mdshi/gitMavenNexus.git</connection>
         <developerConnection>https://github.com/mdshi/gitMavenNexus.git</developerConnection>
         <url>https://github.com/mdshi/gitMavenNexus.git</url>
-        <tag>HEAD</tag>
+        <tag>1.1.0</tag>
   </scm>
 
     <distributionManagement>
