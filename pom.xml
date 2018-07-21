@@ -20,7 +20,7 @@
 
     <distributionManagement>
         <repository>
-            <id>releases-nexus</id>
+            <id>releases</id>
             <url>http://localhost:8081/repository/maven-releases</url>
         </repository>
         <snapshotRepository>
@@ -62,7 +62,7 @@
                        </execution>
                    </executions>
                    <configuration>
-                       <serverId>releases</serverId>
+                       <serverId>releases-nexus</serverId>
                        <nexusUrl>http://localhost:8081/repository/maven-releases</nexusUrl>
                        <skipStaging>true</skipStaging>
                    </configuration>
